@@ -27,7 +27,7 @@ module Sprockets
       data = input[:data]
       if filename.to_s =~ /\.coffee\.cjsx/
         ::CoffeeReact.transform(data)
-      elsif scope.pathname.to_s =~ CJSX_EXTENSION
+      elsif filename.to_s =~ CJSX_EXTENSION
         ::CoffeeScript.compile(::CoffeeReact.transform(data))
       else
         data
